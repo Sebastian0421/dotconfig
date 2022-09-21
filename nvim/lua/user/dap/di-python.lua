@@ -15,6 +15,7 @@ dap_install.config(
               name = "Launch file",
               program = "${file}",
               pythonPath = function()
+                -- 实际的python位置
                 return "/usr/bin/python3"
               end,
           },
