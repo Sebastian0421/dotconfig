@@ -1,0 +1,339 @@
+# snip
+#snippet mid "\mid \mid"
+#	\\mid ${1} \\mid ${0}
+#endsnippet
+
+#snippet srt "\sqrt{}"
+#	\\sqrt{${1}} ${0}
+#endsnippet
+
+#$0 代表鼠标所在的位置
+#b 代表
+#
+#UltiSnips 会自动抓取最新的修改，所以我们不用重启 vim，只要保存了 snippet 文件，就可以直接使用。简单来说，定义的一段 snip 的格式是这样的：
+#
+#snippet 关键词 “说明” 设定
+#内容
+#endsnippet
+#在刚才那段 snip 里，std 就是我们可以展开的 关键词，"use namespace std"是一段说明（如果你用一些自动补全的插件，这段说明就会显示出来，我们之后自然会提到，放心），而 b 的是关于这个 snip 的设定，
+#
+#b 代表只有关键词出现在行首的时候，才可以被展开
+#A 代表自动展开
+#w 代表可以展开这个 “词”，具体 “词” 的定义可以查看 :help iskeyword。直观感觉就是，这个关键词是单独的，和其他文字分开的。比如前后都是空格。
+#i 代表可以忽略前后字节，直接展开关键词。（这个设定比 w 要更松）
+#其他的还有r, s, t, m 等等，都可以通过这个命令在自带文档里找到:
+
+snippet doca "article" b
+\documentclass[11pt]{article}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\setmainfont{STSongti-TC-Bold}[
+      BoldFont        = ToppanBunkyuMidashiMinchoStdN-ExtraBold,
+      ItalicFont      = HYShangWeiShouShuW-Regular,
+      %BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+\usepackage{etoolbox}}
+
+\begin{document}
+   ${0}
+\end{document}
+endsnippet
+   
+
+
+snippet docb "book" b
+\documentclass[11pt]{book}
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in]{geometry}
+\setmainfont{STSongti-TC-Bold}[
+      BoldFont        = ToppanBunkyuMidashiMinchoStdN-ExtraBold,
+      ItalicFont      = HYShangWeiShouShuW-Regular,
+      %BoldItalicFont = texgyrepagella-bolditalic.otf
+]
+
+\usepackage{fontenc}
+
+\begin{document}
+   ${0}
+\end{document}
+endsnippet
+
+snippet bfd "bdseries"
+{\bfseries ${0}}
+endsnippet
+
+snippet ttd "ttfamily"
+{\ttfamily ${0}}
+endsnippet
+
+snippet sfd "sffamily"
+{\sffamily ${0}}
+endsnippet
+
+snippet scd "scshape"
+{\scshape ${0}}
+endsnippet
+
+snippet sld "slshape"
+{\slshape ${0}}
+endsnippet
+
+snippet itd "itshape"
+{\itshape ${0}}
+endsnippet
+
+snippet upd "upshape"
+{\upshape ${0}}
+endsnippet
+
+snippet emd "em"
+{\em ${0}}
+endsnippet
+
+snippet bf "textbf"
+{\textbf ${0}}
+endsnippet
+
+snippet tt "texttt"
+{\texttt ${0}}
+endsnippet
+
+snippet sf "textsf"
+{\textsf ${0}}
+endsnippet
+
+snippet sc "textsc"
+{\textsc ${0}}
+endsnippet
+
+snippet sl "textsl"
+{\textsl ${0}}
+endsnippet
+
+snippet it "textit"
+{\textit ${0}}
+endsnippet
+
+snippet tup "textup"
+{\textup ${0}}
+endsnippet
+
+snippet abs "abstract"
+\begin{abstract}
+ ${0}
+\end{abstract}
+endsnippet
+
+snippet ali "align"
+\begin{align}
+ ${0}
+\end{align}
+endsnippet
+
+snippet tab "tabular"
+\begin{tabular}
+ \item ${0}
+\end{tabular}
+endsnippet
+
+snippet app "appendix"
+\begin{appendix}
+ ${0}
+\end{appendix}
+endsnippet
+
+snippet bma "bmatrix"
+\begin{bmatrix}
+ ${0}
+\end{bmatrix}
+endsnippet
+
+snippet pma "pmatrix"
+\begin{pmatrix}
+ ${0}
+\end{pmatrix}
+endsnippet
+
+snippet cas "cases"
+\begin{cases}
+ ${0}
+\end{cases}
+endsnippet
+
+snippet des "description"
+\begin{description}
+ \item[${0}]
+\end{description}
+endsnippet
+
+snippet cen "center"
+\begin{center}
+ ${0}
+\end{center}
+endsnippet
+
+snippet equ "equation"
+\begin{equation}
+ ${0}
+\end{equation}
+endsnippet
+
+snippet enu "enumerate"
+\begin{enumerate}
+ ${0}
+\end{enumerate}
+endsnippet
+
+snippet eqn "eqnarray"
+\begin{eqnarray}
+ ${0}
+\end{eqnarray}
+endsnippet
+
+snippet fig "figure"
+\begin{figure}
+ ${0}
+\end{figure}
+endsnippet
+
+snippet fla "flalign"
+\begin{flalign}
+ ${0}
+\end{flalign}
+endsnippet
+
+snippet gat "gather"
+\begin{gather}
+ ${0}
+\end{gather}
+endsnippet
+
+snippet ite "item"
+\begin{item}
+ \item ${0}
+\end{item}
+endsnippet
+
+snippet let "letter"
+\begin{letter}
+ ${0}
+\end{letter}
+endsnippet
+
+snippet lis "list"
+\begin{list}
+ ${0}
+\end{list}
+endsnippet
+
+snippet min "minipage"
+\begin{minipage}
+ ${0}
+\end{minipage}
+endsnippet
+
+snippet mul "multiline"
+\begin{multiline}
+ ${0}
+\end{multiline}
+endsnippet
+
+snippet pic "picture"
+\begin{picture}
+ ${0}
+\end{picture}
+endsnippet
+
+snippet spl "split"
+\begin{split}
+ ${0}
+\end{split}
+endsnippet
+
+snippet sub "subequations"
+\begin{subequations}
+ ${0}
+\end{subequations}
+endsnippet
+
+snippet the "theorem"
+\begin{theorem}
+ ${0}
+\end{theorem}
+endsnippet
+
+snippet tit "titlepage"
+\begin{titlepage}
+ ${0}
+\end{titlepage}
+endsnippet
+
+snippet tri "trivlist"
+\begin{trivlist}
+ ${0}
+\end{trivlist}
+endsnippet
+
+snippet var "varwidth"
+\begin{varwidth}
+ ${0}
+\end{varwidth}
+endsnippet
+
+snippet ver "verbatim"
+\begin{verbatim}
+ ${0}
+\end{verbatim}
+endsnippet
+
+snippet tex "\TeX"
+{\TeX}${0}
+endsnippet
+
+snippet lx "\LaTeX"
+{\LaTeX}${0}
+endsnippet
+
+snippet ttl "\title{}"
+\title{${0}}
+endsnippet
+
+snippet aut "\author"
+\author{${0}}
+endsnippet
+
+snippet cha "\chapter"
+\chapter{${0}}
+endsnippet
+
+snippet sec "\section"
+\section{${0}}
+endsnippet
+
+snippet subs "\subsection"
+\subsection{${0}}
+endsnippet
+
+snippet [ "\[...\]"
+\[
+   ${0}
+\]
+endsnippet
+
+snippet $ "$...$ inline"
+$${0}$
+endsnippet
+
+snippet $$ "$$...$$"
+$$
+   ${0}
+$$
+endsnippet
+
+snippet fl "\flushleft"
+{\flushleft ${0}}
+endsnippet
+
+snippet fr "\flushright"
+{\flushright ${0}}
+endsnippet

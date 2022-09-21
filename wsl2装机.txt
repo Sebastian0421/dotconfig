@@ -1,0 +1,134 @@
+1. 换源
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo vim /etc/apt/sources.list
+
+# 清华镜像
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+# 预发布软件源，不建议启用
+# deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
+
+2. 更换字体
+git clone https://github.com/lethang7794/firacode-ubuntu-installer.git
+cd firacode-ubuntu-installer/
+sudo bash installer.sh
+
+3. 更改host上github
+sudo vim /etc/hosts
+添加https://github.com/521xueweihan/GitHub520的内容
+推荐使用SwitchHosts自动管理更新host
+
+
+4. 安装fish
+sudo apt-get install tmux
+sudo apt-get install fish
+chsh -s /usr/bin/fish
+curl -L https://get.oh-my.fish | fish
+fish _config
+如果打不开：
+cd /usr/share/fish/tools/web_config
+sudo chmod 777 webconfig.py
+修改 webconfig.py文件 1489 行附近的代码，将 fileurl = "file://" + f.name 修改成 fileurl = "file://wsl%24/Ubuntu-20.04" + f.name ，保存退出，这时就可以使用了
+chmod 644 webconfig.py
+omf install ays
+
+
+5. git clone Sebastian0421/config
+git clone https://github.com/Sebastian0421/config.git
+sudo rm ~/.config -r
+sudo cp config ~/.config -r
+
+6. 安装必要软件包
+sudo apt install python3-pip
+pip3 install --user pynvim
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install npm
+
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install lazygit
+
+sudo apt install ripgrep
+sudo apt-get install fzf 
+sudo apt-get install global
+sudo apt-get install ctags
+
+如果出现
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 27679 (apt-get) N: Be aware that removing the lock file is not a solution and may break your system. E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+输入ps aux | grep -i apt
+
+sudo npm install -g neovim
+
+7. 安装fd搜索
+wget https://github.com/sharkdp/fd/releases/download/v7.3.0/fd-musl_7.3.0_amd64.deb
+sudo dpkg -i fd-musl_7.3.0_amd64.deb
+
+
+8 安装剪切板工具xclip,否则启动neovim会卡死
+sudo apt install xclip -y
+
+9. 安装neovim
+https://github.com/neovim/neovim/releases
+sudo apt install ./nvim-linux64.deb
+
+
+10. 安装ranger和插件
+sudo apt-get install ranger     # ranger 的主程序
+sudo apt-get install caca-utils # img2txt 图片
+sudo apt-get install highlight  # 代码高亮
+sudo apt-get install atool　    # 存档预览 
+sudo apt-get install w3m        # html页面预览
+sudo apt-get install poppler    # pdf预览
+sudo apt-get install mediainfo  # 多媒体文件预览
+sudo apt-get install catdoc     # doc预览
+sudo apt-get install docx2txt   # docx预览
+sudo apt-get install xlsx2csv   # xlsx预览
+
+git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
+cd nerd-fonts 
+./install.sh
+cd ..
+rm -rf nerd-fonts
+
+sudo apt-get install fontforge
+sudo apt-get install transmission-cli
+git clone https://github.com/cdump/ranger-devicons2.git   
+sudo rm ~/.config/ranger/plugins/devicons2 -r
+sudo cp ranger-devicons2 ~/.config/ranger/plugins/devicon2 -r  
+
+
+11. 如果github不能连接参考https://www.v2fy.com/p/2021-09-24-windows-clash-wsl2-1632440722000/
+
+先升级最新版本git,在host中添加github520提供的ip信息
+sudo apt update  # 更新源
+sudo apt install software-properties-common # 安装 PPA 需要的依赖
+sudo add-apt-repository ppa:git-core/ppa    # 向 PPA 中添加 git 的软件源
+sudo apt-get update
+sudo apt-get install git
+
+9.如果还是不行，就试试使用代理git:
+
+先将clash相关的都允许通过防火墙
+打开clash软件，查看端口，这里为12949，可以自定义1080
+代开cmd输入ipconfig，看wsl的ipv4地址，不行就试试主机的ipv4地址，这里为192.168.1.102
+
+如果上述不行，则：
+git config --global user.name <usename>
+git config --global user.email <email>
+
+% wsl使用主机的ip, 在linux系统中ip为全局代理ip,默认为1127.0.0.1,端口为全局代理端口(自定义)
+git config --global https.proxy socks5://192.168.1.102:12949
+git config --global https.proxy socks5://192.168.1.102:12949
