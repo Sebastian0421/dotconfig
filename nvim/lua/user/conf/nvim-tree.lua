@@ -57,8 +57,19 @@ nvim_tree.setup({
   open_on_tab = false,
   sort_by = "name",
   view = {
-    width = 30,
-    height = 30,
+    --浮动显示
+    float = {
+      enable = false,
+      -- enable = true,
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 30,
+        height = 300,
+        row = 1,
+        col = 1,
+      },
+    },
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
