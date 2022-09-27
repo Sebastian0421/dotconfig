@@ -157,7 +157,7 @@ return packer.startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use "quangnguyen30192/cmp-nvim-tags"
   use "quangnguyen30192/cmp-nvim-ultisnips"
-  use "jsfaint/gen_tags.vim"
+  -- use "jsfaint/gen_tags.vim" --迁移至lsp不再使用gtags
   use "ray-x/cmp-treesitter"
   use "f3fora/cmp-spell" -- spell check
   -- use "github/copilot.vim"  -- Copilot setup,
