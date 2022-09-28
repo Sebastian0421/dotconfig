@@ -95,10 +95,16 @@ keymap("n", "N", "Nzzzv", opts)
 -- keymap("n", "k", "kzz", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- 和tmux冲突
+-- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+keymap("n", "<leader><Up>", ":resize -2<CR>", opts)
+keymap("n", "<leader><Down>", ":resize +2<CR>", opts)
+keymap("n", "<leader><Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<leader><Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 -- keymap("n", "R", ":bnext<CR>", opts)
