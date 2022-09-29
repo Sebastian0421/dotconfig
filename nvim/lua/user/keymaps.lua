@@ -70,6 +70,9 @@ keymap("v", "<leader>cc", ":CommentToggle<CR>", opts)
 -- FileExpoler
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>f", ":NvimTreeFindFile<cr>", opts)
+
+-- formatter 
+keymap("n", "<leader>f", ":FormatWrite<cr>", opts)
 -- no highlight
 keymap("n", "<leader><CR>", ":nohl<cr>", opts)
 -- save buffer

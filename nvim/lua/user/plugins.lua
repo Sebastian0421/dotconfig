@@ -306,7 +306,8 @@ return packer.startup(function(use)
   use "theniceboy/nvim-deus"
 
  -- formatter for language
-  use 'sbdchd/neoformat'
+  -- use 'sbdchd/neoformat'
+  use("mhartington/formatter.nvim")
 
 -- MATLAB edition
   use "yongrenjie/vim-matlab-utils" --gf跳入函数文件
