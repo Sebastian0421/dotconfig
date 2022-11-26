@@ -1,7 +1,7 @@
 set -g -x RANGER_LOAD_DEFAULT_RC FALSE
 set -g -x PATH /usr/local/matlab/R2020a/bin/ $PATH
-#set -g -x DISPLAY 192.168.1.102:0
-set -g -x DISPLAY 10.192.254.190:0
+#set -g -x DISPLAY 192.168.0.101:0
+#set -g -x DISPLAY 10.192.214.67:0
 set -g fish_greeting
 set -g -x PATH /usr/local/matlab/R2020a/bin/glnxa64/ $PATH
 
