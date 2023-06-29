@@ -22,7 +22,7 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("i", "<C-h>", "<C-w>h", opts)
+  keymap("i", "<C-h>", "<C-w>h", opts)
 keymap("i", "<C-j>", "<C-w>j", opts)
 keymap("i", "<C-k>", "<C-w>k", opts)
 keymap("i", "<C-l>", "<C-w>l", opts)
@@ -64,8 +64,11 @@ keymap("n", "[b", ":bp<CR>", opts)
 keymap("n", "]b", ":bn<CR>", opts)
 
 -- 注释
-keymap("n", "<leader>cc", ":CommentToggle<CR>", opts)
-keymap("v", "<leader>cc", ":CommentToggle<CR>", opts)
+-- keymap("n", "<leader>cc", ":CommentToggle<CR>", opts)
+-- keymap("v", "<leader>cc", ":CommentToggle<CR>", opts)
+--使用Ctrl + /注释快捷键
+keymap("n", "<C-_>", ":CommentToggle<CR>", opts)
+keymap("v", "<C-_>", ":CommentToggle<CR>", opts)
 
 -- FileExpoler
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
