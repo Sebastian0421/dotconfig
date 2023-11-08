@@ -67,8 +67,8 @@ keymap("n", "]b", ":bn<CR>", opts)
 -- keymap("n", "<leader>cc", ":CommentToggle<CR>", opts)
 -- keymap("v", "<leader>cc", ":CommentToggle<CR>", opts)
 --使用Ctrl + /注释快捷键
-keymap("n", "<C-_>", ":CommentToggle<CR>", opts)
-keymap("v", "<C-_>", ":CommentToggle<CR>", opts)
+keymap("n", "<leader>/", ":CommentToggle<CR>", opts)
+keymap("v", "<leader>/", ":CommentToggle<CR>", opts)
 
 -- FileExpoler
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
